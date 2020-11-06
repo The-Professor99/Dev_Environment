@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 48222196,
+      "firstName": "Guadalupe",
+      "lastName": "Walter",
+      "email": "Destiney.Legros@yahoo.com"
+    },
+    {
+      "id": 80508904,
+      "firstName": "Marshall",
+      "lastName": "Sipes",
+      "email": "Noah58@gmail.com"
+    },
+    {
+      "id": 63280904,
+      "firstName": "Fae",
+      "lastName": "Heathcote",
+      "email": "Catalina26@gmail.com"
+    },
+    {
+      "id": 1623409,
+      "firstName": "Phyllis",
+      "lastName": "Gusikowski",
+      "email": "Alberto.Cruickshank40@gmail.com"
+    }
+  ]
+}
