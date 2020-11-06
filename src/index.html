@@ -1,14 +1,43 @@
+<!-- This is a template for index.html
+It uses ejs and htmlwebpackPlugin to generate a different index.html for each
+environment. htmlWebpackPlugin will dynamically add references to the scripts and styles
+that it bundles to this file. The generated bundles have hash-based filenames
+so its necessary to add the references dynamically.
+check out more info on embeddedjs and other things that are similar to it to select which you prefer
+for examples of using it with htmlwebpackPlugin, see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <% if (htmlWebpackPlugin.options.token) { %>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+    window.TrackJS && TrackJS.install({
+        token: '<%=htmlWebpackPlugin.options.token%>'
+        // for more configuration options, see https://docs.trackjs.com
+    });
+    </script>
+    <% } %>
+    <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 <body>
-    <h1>Hello World?</h1>
+    <h1 class="testclass">Users</h1>
+    <table>
+        <thead>
+            <th>&nbsp;</th>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </thead>
+        <tbody id="users"></tbody>
+    </table>
+
     <p>Sharing your work locally without having to worry about hosting, you can use tools such as localtunnel, ngrok, now and surge. Check out how to combine browsesync and localtunnel</p>
-    <p>Module Formats include IIFEs, Common Js, Asynchronous Module Definition, Universal Module Definition, ES6 Modules</p>
-    <script src="bundle.js"></script>
+    <p class="testclass">Module Formats include IIFEs, Common Js, Asynchronous Module Definition, Universal Module Definition, ES6 Modules</p>
+    <input type="button" id="Test" value="Test me"/>
 </body>
 </html>

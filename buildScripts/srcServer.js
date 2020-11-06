@@ -27,6 +27,30 @@ app.get("/", function(req, res) {
 
 // Now that we have declared our routing, we will tell express below to listen to the port we have defined above for any changes, if there is an error, the error fxn handles it, else, the website is opened
 
+app.get("/users", function(req, res) {
+    // Hardcoded like it's some database
+    res.json([
+        {
+            "id": 1,
+            "firstName": "Bob",
+            "lastName": "Smith",
+            "email": "bob@gmail.com"
+        },
+        {
+            "id": 2,
+            "firstName": "Tammy",
+            "lastName": "Norton",
+            "email": "tnorton@yahoo.com"
+        },
+        {
+            "id": 3,
+            "firstName": "Tina",
+            "lastName": "Lee",
+            "email": "lee.tina@hotmai.com"
+        },
+    ])
+})
+
 app.listen(port, function(err) {
     if (err) {
         console.log(err);
